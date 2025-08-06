@@ -21,12 +21,12 @@ fn main() {
     let _result1 = io::stdin()
         .read_line(&mut user_name1)
         .expect("не удалось прочитать");
-    let mut _in_num1: f64 = user_name1.trim().parse().expect("Error");
+    let _in_num1: f64 = user_name1.trim().parse().expect("Error");
 
     let _result2 = io::stdin()
         .read_line(&mut user_name2)
         .expect("не удалось прочитать");
     let mut _in_num2: u32 = user_name2.trim().parse().expect("Error");
     _in_num1 += _in_num2 as f64;
-    println!("{:.1}", _in_num1);
+    println!("{:.}", _in_num1);
 }
