@@ -1,14 +1,17 @@
 use std::io;
-
 fn main() {
-    let arr = [-5, 1, 8, 2, 30, 4000, 500000];
-    let mut data = String::new();
-    let _result = io::stdin().read_line(&mut data).expect("ошибка");
-    let index: usize = data.trim().parse::<usize>().unwrap();
-    let sum = arr[index - 1] + arr[index + 1];
-    let sub = arr[index - 1] - arr[index + 1];
-    let mult = arr[index - 1] * arr[index + 1];
-    println!("{}", sum);
-    println!("{}", sub);
-    println!("{}", mult);
+    let mut user_data_0 = String::new();
+
+    let _result1 = io::stdin()
+        .read_line(&mut user_data_0)
+        .expect("не удалось прочитать");
+    let kilo = user_data_0.trim().parse::<f64>().unwrap();
+    let mile = kilo * 0.6214;
+    let yard = kilo * 1093.61;
+    let foot = kilo * 3280.84;
+    let inch = kilo * 39370.1;
+    println!("{} км = {:.3} миль", kilo, mile);
+    println!("{} км = {:.3} ярдов", kilo, yard);
+    println!("{} км = {:.3} футов", kilo, foot);
+    println!("{} км = {:.3} дюймов", kilo, inch);
 }
