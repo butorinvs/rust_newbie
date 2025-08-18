@@ -1,3 +1,7 @@
+/*
+
+*/
+
 fn main() {
     let arr = std::io::stdin()
         .lines()
