@@ -15,7 +15,7 @@ fn main() {
             .expect("Ошибка при чтении ввода.");
         // Надо проверить стоп слово на число
         //let stop2 = input.trim().to_string();
-        if input.trim().to_string() == stop[0] {
+        if input.trim() == stop[0] {
             break;
         }
         let num: f64 = match input.trim().parse() {
@@ -27,5 +27,5 @@ fn main() {
         //vector.push(num);
     }
     summa -= -0.0;
-    println!("{:.1}", summa);
+    println!("{summa:.1}");
 }
