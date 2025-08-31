@@ -1,0 +1,26 @@
+fn func2() {
+    func3();
+}
+
+fn func1() {
+    func2();
+}
+
+fn start() {
+    func1();
+}
+
+fn main() {
+    start();
+}
+
+fn func3() {
+    func4();
+}
+fn func4() {
+    // Реализовать считывание и вывод строки
+    let mut str = String::new();
+
+    std::io::stdin().read_line(&mut str).expect("ERR");
+    println!("{}", str);
+}
