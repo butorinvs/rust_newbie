@@ -1,0 +1,102 @@
+/*
+Права доступа к файлам являются основой модели безопасности, используемой операционными системами.
+Они определяют, кто и как может получить доступ к файлам и каталогам.
+
+В Unix подобных ОС существует три категории пользователей: User (владелец файла), Group (группа пользователей)
+ и Other. Каждая категория имеет три разрешения, которые можно установить. Разрешения Unix представлены либо
+ в символьной, либо в числовой (восьмеричной) записи.
+
+Наиболее распространенной формой является символическое обозначение:
+
+    read (r) - чтение;
+    write (w) - запись;
+    execute (x) - и выполнения файла соответственно.
+
+Но нас интересует другой метод представления, а именно числовая запись, где символьным обозначениям
+соответствуют следующие цифры:
+
+    read - 4;
+    write - 2;
+    execute - 1.
+
+Из суммы этих чисел формируется одна цифра, которая отражает набор разрешений для одной категории.
+Числовое обозначение прав доступа состоит как минимум из трех таких цифр, где каждая цифра формирует
+разрешения для User, Group и Other соответственно. Порядок важен! Однозначные номера определены для всех
+трех категорий пользователей следующим образом:
+*/
+fn acces_7(txt: String) {
+    println!(
+        "{} (full access):\n    - read\n    - write\n    - execute",
+        txt
+    );
+}
+fn acces_6(txt: String) {
+    println!("{}:\n    - read\n    - write", txt);
+}
+fn acces_5(txt: String) {
+    println!("{}:\n    - read\n    - execute", txt);
+}
+fn acces_4(txt: String) {
+    println!("{}:\n    - read only", txt);
+}
+fn acces_3(txt: String) {
+    println!("{}:\n    - write\n    - execute", txt);
+}
+fn acces_2(txt: String) {
+    println!("{}:\n    - write only", txt);
+}
+fn acces_1(txt: String) {
+    println!("{}:\n    - execute only", txt);
+}
+fn acces_0(txt: String) {
+    println!("{} (no access).", txt);
+}
+fn main() {
+    // Чтение входных данных
+    let mut input_1 = String::new();
+    let mut input_2 = String::new();
+    let mut input_3 = String::new();
+    std::io::stdin().read_line(&mut input_1).unwrap();
+    std::io::stdin().read_line(&mut input_2).unwrap();
+    std::io::stdin().read_line(&mut input_3).unwrap();
+
+    let user = input_1.trim().parse::<u8>().unwrap();
+    let group = input_2.trim().parse::<u8>().unwrap();
+    let other = input_3.trim().parse::<u8>().unwrap();
+    let user_txt = String::from("User");
+    let group_txt = String::from("Group");
+    let other_txt = String::from("Other");
+    match user {
+        7 => acces_7(user_txt),
+        6 => acces_6(user_txt),
+        5 => acces_5(user_txt),
+        4 => acces_4(user_txt),
+        3 => acces_3(user_txt),
+        2 => acces_2(user_txt),
+        1 => acces_1(user_txt),
+        0 => acces_0(user_txt),
+        _ => {}
+    }
+    match group {
+        7 => acces_7(group_txt),
+        6 => acces_6(group_txt),
+        5 => acces_5(group_txt),
+        4 => acces_4(group_txt),
+        3 => acces_3(group_txt),
+        2 => acces_2(group_txt),
+        1 => acces_1(group_txt),
+        0 => acces_0(group_txt),
+        _ => {}
+    }
+    match other {
+        7 => acces_7(other_txt),
+        6 => acces_6(other_txt),
+        5 => acces_5(other_txt),
+        4 => acces_4(other_txt),
+        3 => acces_3(other_txt),
+        2 => acces_2(other_txt),
+        1 => acces_1(other_txt),
+        0 => acces_0(other_txt),
+        _ => {}
+    }
+}
