@@ -23,7 +23,7 @@ fn main() {
 
     let index0: usize = in0.trim().parse::<usize>().unwrap();
     let index1: usize = in1.trim().parse::<usize>().unwrap();
-    let arr_out: [f64; 7] = [0.0; 7];
+    let _arr_out: [f64; 7] = [0.0; 7];
     let between0 = arr[index0];
     let between1 = arr[index1];
     arr[index1] = between0;

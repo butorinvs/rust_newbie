@@ -33,10 +33,10 @@ fn main() {
     let mut user_name1 = String::new();
     let mut user_name2 = String::new();
 
-    let result1 = io::stdin()
+    let _result1 = io::stdin()
         .read_line(&mut user_name1)
         .expect("не удалось прочитать");
-    let result1 = io::stdin()
+    let _result1 = io::stdin()
         .read_line(&mut user_name2)
         .expect("не удалось прочитать");
     let in_num1: f64 = user_name1.trim().parse().expect("Error");

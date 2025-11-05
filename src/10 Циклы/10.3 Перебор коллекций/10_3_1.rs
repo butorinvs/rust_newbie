@@ -36,5 +36,5 @@ fn main() {
     for x in 0..v[0] {
         summa += real[x]
     }
-    println!("Среднее значение: {:.1}", summa / v[0]);
+    println!("Среднее значение: {:.1}", summa / v[0] as f64);
 }

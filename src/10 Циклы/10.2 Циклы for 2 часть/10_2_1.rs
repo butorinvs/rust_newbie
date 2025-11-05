@@ -25,15 +25,15 @@ Sample Output:
 Вы ввели: 8
 Вы ввели: 9
 */
+use std::io::BufRead;
 fn main() {
-    for i in 0..10 {
-        let v = std::io::stdin()
-            .lines()
-            .take(i)
-            .map(|x| x.unwrap().trim().to_string())
-            .collect::<Vec<_>>();
-    }
-    for x in 0..10 {
-        println!("{}", v);
+    let v = std::io::stdin()
+        .lock()
+        .lines()
+        .take(10)
+        .map(|x| x.unwrap().trim().to_string())
+        .collect::<Vec<_>>();
+    for line in v {
+        println!("Вы ввели: {}", line);
     }
 }

@@ -19,7 +19,7 @@ fn main() {
     let _result1 = io::stdin()
         .read_line(&mut user_name1)
         .expect("не удалось прочитать");
-    let _in_num1: f64 = user_name1.trim().parse().expect("Error");
+    let mut _in_num1: f64 = user_name1.trim().parse().expect("Error");
 
     let _result2 = io::stdin()
         .read_line(&mut user_name2)

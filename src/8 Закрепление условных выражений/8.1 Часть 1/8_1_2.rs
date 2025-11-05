@@ -21,3 +21,21 @@ fn main() {
         println!("{} не является делителем всех чисел", v[0]);
     }
 }
+
+#[test]
+fn divides_all_numbers() {
+    let input = "2\n4\n6\n8\n";
+    let expected = "2 является делителем чисел 4, 6, 8\n";
+
+    let mut cmd = assert_cmd::Command::cargo_bin("8_1_2").unwrap();
+    cmd.write_stdin(input).assert().success().stdout(expected);
+}
+
+#[test]
+fn not_divides_all_numbers() {
+    let input = "3\n9\n10\n12\n";
+    let expected = "3 не является делителем всех чисел\n";
+
+    let mut cmd = assert_cmd::Command::cargo_bin("8_1_2").unwrap();
+    cmd.write_stdin(input).assert().success().stdout(expected);
+}
